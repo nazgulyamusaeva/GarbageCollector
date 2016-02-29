@@ -22,3 +22,8 @@ gallery:
 media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
+
+#GarbageCollector Admin
+gcadmin:
+    resource: '@GarbageCollectorAdminBundle/Resources/config/routing.yml'
+    prefix: /admin

@@ -1,0 +1,7 @@
+admin_dashboard_index:
+    path:     /
+    defaults: { _controller: GarbageCollectorAdminBundle:Dashboard:index }
+
+admin_dashboard_dashboard:
+    path:     /dashboard
+    defaults: { _controller: GarbageCollectorAdminBundle:Dashboard:dashboard }
