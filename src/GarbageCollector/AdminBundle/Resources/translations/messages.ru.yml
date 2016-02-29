@@ -1,8 +1,26 @@
 admin:
   title:
     dashboard: Главная панель
-    buckets: Точки мусорных баков
+    garbagecans: Точки мусорных баков
     requests: Заявки на выброс
     housecommittees: Домкомы
   action:
-    logout: Выход
+    crud:
+      add: Добавить
+      edit: Редактировать
+      destroy: Удалить
+      show: Показать
+    session:
+      logout: Выход
+
+entity:
+  garbagecan:
+    street: Улица
+    latitude: Широта
+    longitude: Долгота
+    is_full: "Заполнен?"
+    crud:
+      add: Добавить точку
+
+info:
+  chooseplace: Выберите место на карте

@@ -8,11 +8,13 @@
 
 namespace GarbageCollector\AdminBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+
 abstract class CRUDController extends AbstractController {
 
     public abstract function listAction();
 
-    public abstract function newAction();
+    public abstract function newAction(Request $request);
 
     public abstract function editAction($id);
 

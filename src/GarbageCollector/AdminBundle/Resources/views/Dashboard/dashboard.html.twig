@@ -2,16 +2,6 @@
 
 {% block title %}{{ 'admin.title.dashboard'|trans }} - {{ parent() }}{% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <style>
-        #map {
-            height: 400px;
-            margin: 20px 0 20px 0;
-        }
-    </style>
-{% endblock %}
-
 {% block contentheader %}
     {{ 'admin.title.dashboard'|trans }}
 {% endblock %}

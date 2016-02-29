@@ -11,12 +11,6 @@
         <link rel="stylesheet" href="{{ asset('bundles/garbagecollectoradmin/css/font-awesome.css') }}" />
         <link rel="stylesheet" href="{{ asset('bundles/garbagecollectoradmin/css/custom-styles.css') }}" />
 
-        <style>
-            .content {
-                background: white;
-                padding: 5px;
-            }
-        </style>
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
@@ -40,7 +34,7 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> {{ 'admin.action.logout'|trans() }}</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> {{ 'admin.action.session.logout'|trans() }}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -52,7 +46,7 @@
                         <a href="{{ path('admin_dashboard_dashboard') }}"><i class="fa fa-dashboard"></i> {{ 'admin.title.dashboard'|trans() }}</a>
                     </li>
                     <li>
-                        <a href="{{ path('admin_garbage_list') }}"><i class="fa fa-map-marker"></i> {{ 'admin.title.buckets'|trans() }}</a>
+                        <a href="{{ path('admin_garbagecan_list') }}"><i class="fa fa-map-marker"></i> {{ 'admin.title.garbagecans'|trans() }}</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-pencil"></i> {{ 'admin.title.requests'|trans() }}</a>

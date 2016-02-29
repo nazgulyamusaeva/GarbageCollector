@@ -6,24 +6,24 @@ admin_dashboard_dashboard:
     path:     /dashboard
     defaults: { _controller: GarbageCollectorAdminBundle:Dashboard:dashboard }
 
-admin_garbage_list:
-    path:     /garbage/
-    defaults: { _controller: GarbageCollectorAdminBundle:Garbage:list }
+admin_garbagecan_list:
+    path:     /garbagecan/
+    defaults: { _controller: GarbageCollectorAdminBundle:GarbageCan:list }
 
-admin_garbage_new:
-    path:     /garbage/new
-    defaults: { _controller: GarbageCollectorAdminBundle:Garbage:new }
+admin_garbagecan_new:
+    path:     /garbagecan/new
+    defaults: { _controller: GarbageCollectorAdminBundle:GarbageCan:new }
 
-admin_garbage_edit:
-    path:     /garbage/edit/{id}
-    defaults: { _controller: GarbageCollectorAdminBundle:Garbage:edit }
+admin_garbagecan_edit:
+    path:     /garbagecan/edit/{id}
+    defaults: { _controller: GarbageCollectorAdminBundle:GarbageCan:edit }
 
-admin_garbage_show:
-    path:     /garbage/{id}
-    defaults: { _controller: GarbageCollectorAdminBundle:Garbage:show }
+admin_garbagecan_show:
+    path:     /garbagecan/{id}
+    defaults: { _controller: GarbageCollectorAdminBundle:GarbageCan:show }
 
-admin_garbage_delete:
-    path:     /garbage/delete/{id}
-    defaults: { _controller: GarbageCollectorAdminBundle:Garbage:delete }
+admin_garbagecan_delete:
+    path:     /garbagecan/delete/{id}
+    defaults: { _controller: GarbageCollectorAdminBundle:GarbageCan:delete }
     methods:  [DELETE]
 

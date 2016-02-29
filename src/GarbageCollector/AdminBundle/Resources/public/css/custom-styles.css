@@ -622,4 +622,17 @@ font-size: 19px;
 }
 }
 
+/* GarbageCollector */
+.content {
+    background: white;
+    padding: 5px;
+}
 
+#map {
+    height: 100%;
+}
+
+.createBtn {
+    float: right;
+    margin-bottom: 10px;
+}
