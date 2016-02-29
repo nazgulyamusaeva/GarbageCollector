@@ -1,8 +1,8 @@
 admin:
-  sidenav:
+  title:
     dashboard: Главная панель
     buckets: Точки мусорных баков
     requests: Заявки на выброс
     housecommittees: Домкомы
-  topnav:
+  action:
     logout: Выход

@@ -2,9 +2,7 @@
 
 namespace GarbageCollector\AdminBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-class DashboardController extends Controller
+class DashboardController extends AbstractController
 {
     public function indexAction()
     {
