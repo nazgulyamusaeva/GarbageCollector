@@ -16,7 +16,7 @@ abstract class CRUDController extends AbstractController {
 
     public abstract function newAction(Request $request);
 
-    public abstract function editAction($id);
+    public abstract function editAction(Request $request, $id);
 
     public abstract function showAction($id);
 

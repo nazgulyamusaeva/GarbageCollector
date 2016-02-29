@@ -1,0 +1,41 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block title %}{{ 'entity.garbagecan.crud.show'|trans() ~ garbagecan.id  }} - {{ parent() }}{% endblock %}
+
+{% block contentheader %}
+    {{ 'entity.garbagecan.crud.show'|trans ~ garbagecan.id }}
+{% endblock %}
+
+{% block content %}
+    <strong>{{ 'entity.garbagecan.street'|trans() }}: </strong> {{ garbagecan.street }} <br>
+    <strong>{{ 'entity.garbagecan.latitude'|trans() }}: </strong> {{ garbagecan.latitude }} <br>
+    <strong>{{ 'entity.garbagecan.longitude'|trans() }}: </strong> {{ garbagecan.longitude }}
+
+    <div style="height: 400px">
+        <div id="map"></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        var map;
+        var marker;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: {{ garbagecan.latitude }}, lng: {{ garbagecan.longitude }}},
+                zoom: 13
+            });
+
+            marker = new google.maps.Marker({
+                position: {lat: {{ garbagecan.latitude }}, lng: {{ garbagecan.longitude }}},
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-bUJ1zdRIcv15XacvLVPBxsMqmGHWWpE&callback=initMap"
+            async defer>
+
+    </script>
+{% endblock %}

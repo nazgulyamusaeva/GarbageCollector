@@ -8,7 +8,7 @@ admin:
     crud:
       add: Добавить
       edit: Редактировать
-      destroy: Удалить
+      delete: Удалить
       show: Показать
     session:
       logout: Выход
@@ -21,10 +21,15 @@ entity:
     is_full: "Заполнен?"
     crud:
       add: Добавить точку
+      edit: Редактировать точку
+      show: "Точка #"
 
 info:
   chooseplace: Выберите точку на карте
   flash:
     savesuccess: Запись успешно сохранена.
     saveerror: Ошибка при сохранении.
+    datawithidnotfound: Запрашиваемая Вами запись не найдена.
+    updatesuccess: Запись успешно обновлена
+    updateerror: Ошибка при обновлении записи
   latlngwarning: Выберите точку на карте и значения широты и долготы установятся автоматически.
