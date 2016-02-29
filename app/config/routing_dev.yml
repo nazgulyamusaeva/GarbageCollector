@@ -16,7 +16,3 @@ _errors:
 
 _main:
     resource: routing.yml
-
-##################### AppBundle #####################
-main:
-    resource: "@AKoikelovASAppBundle/Resources/config/routing.yml"

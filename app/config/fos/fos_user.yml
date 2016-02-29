@@ -1,0 +1,18 @@
+#FOS user
+fos_user:
+  db_driver:  orm # can be orm or odm
+  firewall_name:  main
+  user_class:  Application\FOS\UserBundle\Entity\User
+
+  group:
+    group_class:  Application\FOS\UserBundle\Entity\Group
+
+  registration:
+      confirmation:
+          from_email:
+              address:      your.email@gmail.com
+              sender_name:  Команда Bookkeep
+          enabled: false
+      form:
+          type: app_user_registration
+          #     FOS\UserBundle\Form\Type\RegistrationFormType  Symfony version < 2.8
