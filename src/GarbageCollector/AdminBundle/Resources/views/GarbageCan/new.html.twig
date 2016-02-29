@@ -7,6 +7,21 @@
 {% endblock %}
 
 {% block content %}
+    {% if app.session.flashBag.has('success') %}
+        {% for msg in app.session.flashBag.get('success') %}
+            <div class="alert alert-success">{{ msg|trans() }}</div>
+        {% endfor %}
+    {% endif %}
+    {% if app.session.flashBag.has('error') %}
+        {% for msg in app.session.flashBag.get('error') %}
+            <div class="alert alert-danger">{{ msg|trans() }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="alert alert-info">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{ 'info.latlngwarning'|trans() }}
+    </div>
     <form method="POST" action="{{ path('admin_garbagecan_new') }}">
         <div class="form-group">
             <label>{{ form_label(form.street) }}</label>
@@ -21,24 +36,29 @@
             {{ form_widget(form.longitude, {'attr': {'class': 'form-control'}}) }}
         </div>
         {{ form_rest(form) }}
+        <button id="submitBtn" class="btn btn-success" type="submit" disabled>{{ 'entity.garbagecan.crud.add'|trans() }}</button>
     </form>
+
+    <br>
     <button class="btn btn-primary" data-toggle="modal" data-target="#mapModal">
         {{ 'info.chooseplace'|trans }}
     </button>
-    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog" style="width: 900px;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel">{{ 'info.chooseplace'|trans }}</h4>
-                </div>
-                <div class="modal-body" style="height: 550px;">
-                    <div id="map"></div>
+
+    {% block modal %}
+        <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog" style="width: 900px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">{{ 'info.chooseplace'|trans }}</h4>
+                    </div>
+                    <div class="modal-body" style="height: 550px;">
+                        <div id="map"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button class="btn btn-success" type="submit">{{ 'entity.garbagecan.crud.add'|trans() }}</button>
+    {% endblock %}
 {% endblock %}
 
 {% block javascripts %}
@@ -48,6 +68,7 @@
         var marker;
         var latitudeFormInput;
         var longitudeFormInput;
+        var mapAlreadyLoaded = false;
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
@@ -75,15 +96,22 @@
                     $(latitudeFormInput).val(latLng.lat());
                     $(longitudeFormInput).val(latLng.lng());
                 }
+
+                $('#submitBtn').attr('disabled', false);
             });
         }
 
-        $('#mapModal').on('shown.bs.modal', function() {
+        $(document).ready(function() {
             latitudeFormInput = $('#garbagecollector_entitybundle_garbagecan_latitude');
             longitudeFormInput = $('#garbagecollector_entitybundle_garbagecan_longitude');
-            initMap();
-        });
 
+            $('#mapModal').on('shown.bs.modal',function() {
+                if (!mapAlreadyLoaded) {
+                    initMap();
+                    mapAlreadyLoaded = true;
+                }
+            });
+        });
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-bUJ1zdRIcv15XacvLVPBxsMqmGHWWpE&callback=initMap"
             async defer>

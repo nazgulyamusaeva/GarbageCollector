@@ -19,10 +19,10 @@ class GarbageCanType extends AbstractType
                 'label' => 'entity.garbagecan.street'
             ))
             ->add('latitude', null, array(
-                'attr' => array('disabled' => true), 'label' => 'entity.garbagecan.latitude'
+                'attr' => array('readonly' => true), 'label' => 'entity.garbagecan.latitude'
             ))
             ->add('longitude', null, array(
-                'attr' => array('disabled' => true), 'label' => 'entity.garbagecan.longitude'
+                'attr' => array('readonly' => true), 'label' => 'entity.garbagecan.longitude'
             ))
         ;
     }

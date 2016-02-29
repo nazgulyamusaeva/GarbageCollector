@@ -26,4 +26,8 @@ class AbstractController extends Controller {
     public function getRepository($name) {
         return $this->getDoctrine()->getManager()->getRepository($name);
     }
+
+    public function getFlashBag() {
+        return $this->get('session')->getFlashBag();
+    }
 }

@@ -16,8 +16,9 @@ class GarbageCanController extends CRUDController {
 
     public function listAction()
     {
+        $garbageCans = $this->getRepository('GarbageCollectorEntityBundle:GarbageCan')->findAll();
         return $this->render('GarbageCollectorAdminBundle:GarbageCan:list.html.twig', array(
-
+            'garbageCans' => $garbageCans
         ));
     }
 
@@ -31,6 +32,22 @@ class GarbageCanController extends CRUDController {
                 'form' => $form->createView()
             ));
         }
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->save($form->getData());
+            $this->getFlashBag()->add('success', 'info.flash.savesuccess');
+
+            return $this->render('GarbageCollectorAdminBundle:GarbageCan:new.html.twig', array(
+                'form' => $form->createView()
+            ));
+        }
+
+        $this->getFlashBag()->add('error', 'info.flash.saveerror');
+        return $this->render('GarbageCollectorAdminBundle:GarbageCan:new.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 
     public function editAction($id)
