@@ -27,3 +27,18 @@ admin_garbagecan_delete:
     defaults: { _controller: GarbageCollectorAdminBundle:GarbageCan:delete }
     methods:  [DELETE]
 
+admin_housecommittee_new:
+    path: /housecommittee/new
+    defaults: { _controller: GarbageCollectorAdminBundle:HouseCommittee:new }
+
+admin_housecommittee_edit:
+    path: /housecommittee/edit/{id}
+    defaults: { _controller: GarbageCollectorAdminBundle:HouseCommittee:edit }
+
+admin_housecommittee_show:
+    path:     /housecommittee/{id}
+    defaults: { _controller: GarbageCollectorAdminBundle:HouseCommittee:show }
+
+admin_housecommittee_list:
+    path:     /housecommittee/
+    defaults: { _controller: GarbageCollectorAdminBundle:HouseCommittee:list }

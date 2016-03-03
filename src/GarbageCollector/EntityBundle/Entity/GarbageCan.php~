@@ -139,4 +139,37 @@ class GarbageCan
     {
         return $this->isFull;
     }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return GarbageCan
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function prePersist() {
+        $this->setCreatedAt(new \DateTime());
+        $this->setIsFull(false);
+    }
+
+    public function preUpdate() {
+        $this->setCreatedAt(new \DateTime());
+    }
 }

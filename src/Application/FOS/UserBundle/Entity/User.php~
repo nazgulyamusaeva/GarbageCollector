@@ -140,8 +140,4 @@ class User extends BaseUser
     {
         return $this->phone;
     }
-
-    public function lifecycleCallback() {
-        $this->setEmail("");
-    }
 }

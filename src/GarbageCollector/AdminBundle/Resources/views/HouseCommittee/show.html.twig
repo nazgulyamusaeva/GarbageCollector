@@ -1,0 +1,15 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block title %}{{ housecommittee.firstName ~ ' ' ~ housecommittee.lastName }} - {{ parent() }}{% endblock %}
+
+{% block contentheader %}
+    {{ housecommittee.firstName ~ ' ' ~ housecommittee.lastName }}
+{% endblock %}
+
+{% block content %}
+    <strong>{{ 'entity.housecommittee.firstname'|trans() }}: </strong> {{ housecommittee.firstName }} <br>
+    <strong>{{ 'entity.housecommittee.lastname'|trans() }}: </strong> {{ housecommittee.lastName }} <br>
+    <strong>{{ 'entity.housecommittee.address'|trans() }}: </strong> {{ housecommittee.address }} <br>
+    <strong>{{ 'entity.housecommittee.phone'|trans() }}: </strong> {{ housecommittee.phone }} <br>
+    <strong>{{ 'entity.housecommittee.username'|trans() }}: </strong> {{ housecommittee.username }} <br>
+{% endblock %}

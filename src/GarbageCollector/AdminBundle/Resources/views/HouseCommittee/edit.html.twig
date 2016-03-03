@@ -1,0 +1,48 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block title %}{{ 'entity.housecommittee.crud.edit'|trans() }} - {{ parent() }}{% endblock %}
+
+{% block contentheader %}
+    {{ 'entity.housecommittee.crud.edit'|trans }}
+{% endblock %}
+
+{% block content %}
+    {% if app.session.flashBag.has('success') %}
+        {% for msg in app.session.flashBag.get('success') %}
+            <div class="alert alert-success">{{ msg|trans() }}</div>
+        {% endfor %}
+    {% endif %}
+    {% if app.session.flashBag.has('error') %}
+        {% for msg in app.session.flashBag.get('error') %}
+            <div class="alert alert-danger">{{ msg|trans() }}</div>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" action="{{ path('admin_housecommittee_edit', {'id': housecommittee.id}) }}">
+        <div class="form-group">
+            <label>{{ form_label(form.username) }}</label>
+            {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>{{ form_label(form.password) }}</label>
+            {{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>{{ form_label(form.firstName) }}</label>
+            {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>{{ form_label(form.lastName) }}</label>
+            {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>{{ form_label(form.address) }}</label>
+            {{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>{{ form_label(form.phone) }}</label>
+            {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        {{ form_rest(form) }}
+        <button id="submitBtn" class="btn btn-success" type="submit">{{ 'entity.housecommittee.crud.edit'|trans() }}</button>
+    </form>
+{% endblock %}

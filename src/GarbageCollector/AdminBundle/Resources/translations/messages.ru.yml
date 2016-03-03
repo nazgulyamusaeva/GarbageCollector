@@ -2,7 +2,7 @@ admin:
   title:
     dashboard: Главная панель
     garbagecans: Точки мусорных баков
-    requests: Заявки на выброс
+    requests: Заявки на выброс мусора
     housecommittees: Домкомы
   action:
     crud:
@@ -23,6 +23,16 @@ entity:
       add: Добавить точку
       edit: Редактировать точку
       show: "Точка #"
+  housecommittee:
+      username: Логин
+      password: Пароль
+      firstname: Имя
+      lastname: Фамилия
+      address: Место проживания
+      phone: Телефон
+      crud:
+        add: Добавить дом. кома
+        edit: Редактировать дом. кома
 
 info:
   chooseplace: Выберите точку на карте

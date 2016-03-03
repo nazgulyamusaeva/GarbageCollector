@@ -52,7 +52,7 @@
                         <a href="#"><i class="fa fa-pencil"></i> {{ 'admin.title.requests'|trans() }}</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-users"></i> {{ 'admin.title.housecommittees'|trans() }}</a>
+                        <a href="{{ path('admin_housecommittee_list') }}"><i class="fa fa-users"></i> {{ 'admin.title.housecommittees'|trans() }}</a>
                     </li>
                 </ul>
             </div>
@@ -66,10 +66,8 @@
                     {% endblock %}
                 </h1>
             </div>
-            <div id="page-inner">
-                <div class="col-md-12 content">
-                    {% block content %}{% endblock %}
-                </div>
+            <div class="col-md-12 content">
+                {% block content %}{% endblock %}
             </div>
         </div>
     </div>
