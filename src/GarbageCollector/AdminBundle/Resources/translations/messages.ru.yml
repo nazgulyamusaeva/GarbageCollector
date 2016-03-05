@@ -30,6 +30,7 @@ entity:
       lastname: Фамилия
       address: Место проживания
       phone: Телефон
+      email: E-mail
       crud:
         add: Добавить дом. кома
         edit: Редактировать дом. кома

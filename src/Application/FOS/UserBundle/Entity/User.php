@@ -142,6 +142,6 @@ class User extends BaseUser
     }
 
     public function lifecycleCallback() {
-        $this->setEmail("");
+        $this->setEnabled(true);
     }
 }

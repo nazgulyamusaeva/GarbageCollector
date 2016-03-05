@@ -18,7 +18,7 @@ class UserType extends AbstractType
             ->add('username', null, array(
                 'label' => 'entity.housecommittee.username'
             ))
-            ->add('password', 'password', array(
+            ->add('plainPassword', 'password', array(
                 'label' => 'entity.housecommittee.password'
             ))
             ->add('firstName', null, array(
@@ -32,6 +32,9 @@ class UserType extends AbstractType
             ))
             ->add('phone', null, array(
                 'label' => 'entity.housecommittee.phone'
+            ))
+            ->add('email', null, array(
+                'label' => 'entity.housecommittee.email'
             ))
         ;
     }

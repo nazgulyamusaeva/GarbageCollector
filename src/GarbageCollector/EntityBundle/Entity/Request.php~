@@ -1,0 +1,187 @@
+<?php
+
+namespace GarbageCollector\EntityBundle\Entity;
+
+/**
+ * Request
+ */
+class Request
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $comment;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \Application\FOS\UserBundle\Entity\User
+     */
+    private $user;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     *
+     * @return Request
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Request
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Application\FOS\UserBundle\Entity\User $user
+     *
+     * @return Request
+     */
+    public function setUser(\Application\FOS\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+    /**
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     */
+    private $photo;
+
+
+    /**
+     * Set photo
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $photo
+     *
+     * @return Request
+     */
+    public function setPhoto(\Application\Sonata\MediaBundle\Entity\Media $photo = null)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $garbageCan;
+
+
+    /**
+     * Add garbageCan
+     *
+     * @param \GarbageCollector\EntityBundle\Entity $garbageCan
+     *
+     * @return Request
+     */
+    public function addGarbageCan(\GarbageCollector\EntityBundle\Entity $garbageCan)
+    {
+        $this->garbageCan[] = $garbageCan;
+
+        return $this;
+    }
+
+    /**
+     * Remove garbageCan
+     *
+     * @param \GarbageCollector\EntityBundle\Entity $garbageCan
+     */
+    public function removeGarbageCan(\GarbageCollector\EntityBundle\Entity $garbageCan)
+    {
+        $this->garbageCan->removeElement($garbageCan);
+    }
+
+    /**
+     * Get garbageCan
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGarbageCan()
+    {
+        return $this->garbageCan;
+    }
+}

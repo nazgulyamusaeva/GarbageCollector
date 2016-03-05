@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="GarbageCollector\EntityBundle\Entity\Request" table="request">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="comment" type="text" column="comment"/>
+    <field name="createdAt" type="datetime" column="created_at"/>
+
+    <one-to-one target-entity="Application\FOS\UserBundle\Entity\User" field="user">
+    </one-to-one>
+    <one-to-one field="photo" target-entity="Application\Sonata\MediaBundle\Entity\Media">
+
+    </one-to-one>
+    <many-to-one target-entity="GarbageCollector\EntityBundle\Entity\GarbageCan" field="garbageCan">
+
+    </many-to-one>
+      
+    <lifecycle-callbacks>
+        <lifecycle-callback type="prePersist" method="prePersist"/>
+    </lifecycle-callbacks>  
+  </entity>
+</doctrine-mapping>
