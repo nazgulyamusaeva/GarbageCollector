@@ -1,0 +1,3 @@
+android_android_newrequest:
+    path: /request/new
+    defaults: { _controller: GarbageCollectorAndroidBundle:Android:newRequest }

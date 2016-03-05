@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new \GarbageCollector\AppBundle\GarbageCollectorAppBundle(),
             new \GarbageCollector\AdminBundle\GarbageCollectorAdminBundle(),
             new \GarbageCollector\EntityBundle\GarbageCollectorEntityBundle(),
+            new GarbageCollector\AndroidBundle\GarbageCollectorAndroidBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

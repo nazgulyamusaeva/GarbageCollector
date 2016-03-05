@@ -27,3 +27,8 @@ media:
 gcadmin:
     resource: '@GarbageCollectorAdminBundle/Resources/config/routing.yml'
     prefix: /admin
+
+#GarbageCollector Android
+gcandroid:
+    resource: '@GarbageCollectorAndroidBundle/Resources/config/routing.yml'
+    prefix: /android

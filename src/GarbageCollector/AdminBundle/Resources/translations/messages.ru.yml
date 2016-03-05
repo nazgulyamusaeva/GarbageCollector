@@ -34,6 +34,14 @@ entity:
       crud:
         add: Добавить дом. кома
         edit: Редактировать дом. кома
+  request:
+      user: Отправитель
+      garbagecan: Точка
+      photo: Фотография
+      comment: Комментарий
+      created_at: Дата
+      crud:
+        show: Заявка
 
 info:
   chooseplace: Выберите точку на карте
@@ -44,3 +52,7 @@ info:
     updatesuccess: Запись успешно обновлена
     updateerror: Ошибка при обновлении записи
   latlngwarning: Выберите точку на карте и значения широты и долготы установятся автоматически.
+  yes: Да
+  no: нет
+  anonymous: Аноним
+

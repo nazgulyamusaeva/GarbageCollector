@@ -42,3 +42,11 @@ admin_housecommittee_show:
 admin_housecommittee_list:
     path:     /housecommittee/
     defaults: { _controller: GarbageCollectorAdminBundle:HouseCommittee:list }
+
+admin_request_list:
+    path:     /requests/
+    defaults: { _controller: GarbageCollectorAdminBundle:Request:list }
+
+admin_request_show:
+    path:     /requests/{id}
+    defaults: { _controller: GarbageCollectorAdminBundle:Request:show }
