@@ -4,9 +4,9 @@
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
-    <field name="firstName" column="first_name" nullable="false" type="string" />
-    <field name="lastName" column="last_name" nullable="false" type="string" />
-    <field name="address" column="address" nullable="false" type="string" />
+    <field name="firstName" column="first_name" nullable="true" type="string" />
+    <field name="lastName" column="last_name" nullable="true" type="string" />
+    <field name="address" column="address" nullable="true" type="string" />
     <field name="phone" column="phone" nullable="true" type="string" />
 
     <lifecycle-callbacks>

@@ -19,7 +19,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "phpunit/phpunit": "^4.8",
 
-	"sonata-project/user-bundle": "^2.2",
+        "sonata-project/user-bundle": "^2.2",
         "sonata-project/media-bundle": "^2.3",
 
         "egeloen/ckeditor-bundle": "^4.0",
@@ -35,5 +35,14 @@
     },
     "config": {
       "bin-dir": "bin"
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+        "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrapSass"
+      ]
     }
 }
