@@ -25,7 +25,7 @@ admin_garbagecan_show:
 admin_garbagecan_delete:
     path:     /garbagecan/delete/{id}
     defaults: { _controller: GarbageCollectorAdminBundle:GarbageCan:delete }
-    methods:  [DELETE]
+    methods:  [DELETEz]
 
 admin_housecommittee_new:
     path: /housecommittee/new

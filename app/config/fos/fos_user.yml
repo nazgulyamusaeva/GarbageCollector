@@ -11,7 +11,7 @@ fos_user:
       confirmation:
           from_email:
               address:      your.email@gmail.com
-              sender_name:  Команда Bookkeep
+              sender_name:  Garbage Collector
           enabled: false
       form:
           type: app_user_registration

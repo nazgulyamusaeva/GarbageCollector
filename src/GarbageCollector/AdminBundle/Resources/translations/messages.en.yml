@@ -1,3 +1,58 @@
 admin:
-  sidenav:
+  title:
     dashboard: Dashboard
+    garbagecans: Garbage cans
+    requests: Requests
+    housecommittees: House committees
+  action:
+    crud:
+      add: Add
+      edit: Edit
+      delete: Delete
+      show: Show
+    session:
+      logout: Logout
+
+entity:
+  garbagecan:
+    street: Street
+    latitude: Latitude
+    longitude: Logitude
+    is_full: "Is full?"
+    crud:
+      add: Add garbage can
+      edit: Edit garbage can
+      show: "Garbage can #"
+  housecommittee:
+      username: Login
+      password: Password
+      firstname: First name
+      lastname: Last name
+      address: Address
+      phone: Phone
+      email: E-mail
+      crud:
+        add: Add house committee
+        edit: Edit house committee
+  request:
+      user: User
+      garbagecan: Garbage can
+      photo: Photo
+      comment: Comment
+      created_at: Date
+      crud:
+        show: Request
+
+info:
+  chooseplace: Choose place on the map
+  flash:
+    savesuccess: Successfully saved.
+    saveerror: Save error.
+    datawithidnotfound: Needed information is not found.
+    updatesuccess: Information successfully updated
+    updateerror: Updating error.
+  latlngwarning: Choose place on the map and values of the latitude and the longitude will be set automatically.
+  yes: Yes
+  no: No
+  anonymous: Anonymous
+

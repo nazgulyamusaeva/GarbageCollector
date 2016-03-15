@@ -1,11 +1,12 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: AdvancedSymfony.dev
-    database_user: akoikelov
+    database_name: GarbageCollector.dev
+    database_user: root
     database_password: 12345
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
     secret: 9c35cf323e5124a0d5ff9a8576517370d9e46f46
+    locale: en
