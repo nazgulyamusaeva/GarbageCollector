@@ -10,8 +10,10 @@ class DashboardController extends AbstractController
     }
 
     public function dashboardAction() {
-        return $this->render('GarbageCollectorAdminBundle:Dashboard:dashboard.html.twig', array(
+        $garbageCans = $this->getRepository('GarbageCollectorEntityBundle:GarbageCan')->findAll();
 
+        return $this->render('GarbageCollectorAdminBundle:Dashboard:dashboard.html.twig', array(
+            'garbageCans' => $garbageCans
         ));
     }
 

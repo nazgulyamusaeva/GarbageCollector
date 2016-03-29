@@ -24,6 +24,9 @@ class GarbageCanType extends AbstractType
             ->add('longitude', null, array(
                 'attr' => array('readonly' => true), 'label' => 'entity.garbagecan.longitude'
             ))
+            ->add('isFull', null, array(
+                'label' => 'entity.garbagecan.is_full'
+            ))
         ;
     }
     

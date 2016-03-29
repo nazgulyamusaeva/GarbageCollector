@@ -8,30 +8,45 @@
 
 {% block content %}
     <h4><strong>Текущее состояние</strong></h4>
-    <div id="map"></div>
+    <div id="map-dashboard"></div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script>
         var map;
+        var markers = [];
+        var marker;
+        var infoWindow;
 
         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
+            map = new google.maps.Map(document.getElementById('map-dashboard'), {
                 center: {lat: 42.85409, lng: 74.62833},
-                zoom: 13
+                zoom: 11
             });
 
-            map.addListener('click', function(e) {
-                var marker = new google.maps.Marker({
-                    position: e.latLng,
+            {% for item in garbageCans %}
+                marker = new google.maps.Marker({
+                    position: {lat: {{ item.latitude }}, lng: {{ item.longitude }} },
                     map: map,
+                    icon: {% if item.isFull %}
+                            '{{ asset('bundles/garbagecollectoradmin/img/fullcan.png') }}'
+                          {% else %}
+                            '{{ asset('bundles/garbagecollectoradmin/img/emptycan.png') }}'
+                          {% endif %}
                 });
-
                 marker.addListener('click', function() {
-                    this.setMap(null);
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: '{{ item.street }}'
+                    });
+                    infoWindow.open(map, this);
                 });
-            });
+                markers.push(marker);
+            {% endfor %}
+
+            {% for item in garbageCans %}
+
+            {% endfor %}
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-bUJ1zdRIcv15XacvLVPBxsMqmGHWWpE&callback=initMap"

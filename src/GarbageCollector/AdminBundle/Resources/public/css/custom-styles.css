@@ -632,6 +632,11 @@ font-size: 19px;
     height: 100%;
 }
 
+#map-dashboard {
+    padding: 5px;
+    height: 500px;
+}
+
 .createBtn {
     float: right;
     margin-bottom: 10px;
